@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark Theme - AztekillerTech NeonMorphic */
+    --background: 240 30% 4%;    /* #080A14 */
+    --foreground: 0 0% 95%;      /* #F2F2F2 */
+    --card: 240 25% 7%;          /* #0D0F1C */
+    --card-foreground: 0 0% 92%;
+    --popover: 240 25% 7%;
+    --popover-foreground: 0 0% 92%;
+
+    /* Primary Brand: Neon Purple */
+    --primary: 272 85% 65%;      /* #A855F7 */
+    --primary-foreground: 0 0% 100%;
+
+    /* Accent: Neon Pink-Purple */
+    --accent: 300 72% 58%;       /* #CC44DF */
+    --accent-foreground: 0 0% 100%;
+
+    /* Secondary/Muted */
+    --secondary: 240 20% 12%;    /* #141722 */
+    --secondary-foreground: 0 0% 80%;
+    --muted: 240 20% 10%;        /* #101318 */
+    --muted-foreground: 0 0% 50%;
+
+    /* Borders & Inputs */
+    --border: 240 18% 16%;       /* #1C1F2E */
+    --input: 240 20% 12%;
+    --ring: 272 85% 65%;
+
+    /* Status */
+    --destructive: 355 68% 56%;
+    --destructive-foreground: 0 0% 100%;
+
+    --radius: 0.5rem;
+
+    /* Mobile Spacing */
+    --mobile-spacing-xs: 0.75rem;
+    --mobile-spacing-sm: 1rem;
+    --mobile-spacing-md: 1.5rem;
+    --mobile-spacing-lg: 2rem;
+    --mobile-spacing-xl: 2.5rem;
+
+    --touch-target-min: 44px;
+    --mobile-font-base: 16px;
+    --mobile-line-height: 1.6;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  overflow-x: clip;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  line-height: var(--mobile-line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--mobile-font-base);
+  position: relative;
+}
+
+/* Global Watermark */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url('https://horizons-cdn.hostinger.com/8c03d443-41ba-495d-8928-50effd5c053a/6d203b324525c3b80ef5077a21caa9fe.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: clamp(300px, 50vw, 800px);
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  body {
+    line-height: 1.6;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  line-height: 1.2;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+}
+
+h1 {
+  font-size: 2.25rem;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+p {
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  min-height: var(--touch-target-min);
+}
+
+input, textarea, select {
+  font-size: 16px;
+  color: hsl(var(--foreground));
+}
+
+input::placeholder, textarea::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .transition-smooth {
+    transition: all 0.3s ease;
+  }
+
+  .mobile-touch-target {
+    min-height: var(--touch-target-min);
+    min-width: var(--touch-target-min);
+  }
+  
+  .mobile-button {
+    min-height: var(--touch-target-min);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .mobile-input {
+    min-height: var(--touch-target-min);
+    font-size: 16px;
+    padding: 0.75rem 1rem;
+  }
+
+  .bg-gradient-dark-purple {
+    background: linear-gradient(to bottom right, hsl(240 15% 5%), hsl(279 72% 14%));
+  }
+}
