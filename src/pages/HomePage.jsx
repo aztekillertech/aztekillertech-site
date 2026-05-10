@@ -409,30 +409,6 @@ function HomePage() {
                 transition={{ duration: 0.5, delay: 0.35 }}
                 style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1.4rem', marginBottom: '3.2rem' }}
               >
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-all duration-300 hover:scale-105 active:scale-95"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '0.9rem 2.2rem',
-                    borderRadius: '999px',
-                    border: '2px solid #A855F7',
-                    background: 'rgba(168,85,247,0.10)',
-                    color: 'white',
-                    fontWeight: 700,
-                    fontSize: '1rem',
-                    fontFamily: 'Orbitron, sans-serif',
-                    letterSpacing: '0.03em',
-                    textDecoration: 'none',
-                    boxShadow: '0 0 22px rgba(168,85,247,0.30)'
-                  }}
-                >
-                  Recupera tu cuenta
-                </a>
                 <Link
                   to="/servicios"
                   style={{
