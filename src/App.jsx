@@ -11,6 +11,9 @@ import SeguridadPage from './pages/SeguridadPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import ProcessPage from './pages/ProcessPage.jsx';
 import UGCGuardianPage from '@/pages/UGCGuardianPage.jsx';
+import AppsPage from './pages/AppsPage.jsx';
+import ToolsPage from './pages/ToolsPage.jsx';
+import CentroPage from './pages/CentroPage.jsx';
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
         <Route path="/ciberseguridad" element={<CybersecurityPage />} />
         <Route path="/software" element={<SoftwarePage />} />
         <Route path="/seguridad" element={<SeguridadPage />} />
+        <Route path="/apps" element={<AppsPage />} />
+        <Route path="/tools" element={<ToolsPage />} />
+        <Route path="/centro" element={<CentroPage />} />
         <Route path="/contacto" element={<ContactPage />} />
         <Route path="/proceso" element={<ProcessPage />} />
         <Route path="*" element={

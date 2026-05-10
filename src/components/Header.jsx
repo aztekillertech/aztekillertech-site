@@ -7,8 +7,9 @@ const whatsappUrl = "https://wa.me/5214561175410?text=Hola,%20necesito%20asisten
 const navLinks = [
   { path: '/', label: 'Inicio' },
   { path: '/servicios', label: 'Servicios' },
-  { path: '/reparacion', label: 'Reparación' },
-  { path: '/software', label: 'Software' },
+  { path: '/apps', label: 'Apps' },
+  { path: '/tools', label: 'Tools' },
+  { path: '/centro', label: 'Centro' },
   { path: '/contacto', label: 'Contacto' },
 ];
 
