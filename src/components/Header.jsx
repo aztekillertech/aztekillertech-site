@@ -7,6 +7,8 @@ const whatsappUrl = "https://wa.me/5214561175410?text=Hola,%20necesito%20asisten
 const navLinks = [
   { path: '/', label: 'Inicio' },
   { path: '/servicios', label: 'Servicios' },
+  { href: 'https://ugcguardian.pro', label: 'UGC Guardian' },
+  { href: 'https://secufy.pro', label: 'Secufy' },
   { path: '/apps', label: 'Apps' },
   { path: '/tools', label: 'Tools' },
   { path: '/centro', label: 'Centro' },
@@ -54,26 +56,48 @@ function Header() {
 
           {/* Nav — desktop center */}
           <nav className="hidden lg:flex items-center gap-8 flex-1 justify-center">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                style={{
-                  fontFamily: 'Orbitron, sans-serif',
-                  fontSize: '0.7rem',
-                  fontWeight: 500,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  color: isActive(link.path) ? '#A855F7' : 'rgba(255,255,255,0.58)',
-                  borderBottom: isActive(link.path) ? '2px solid #A855F7' : '2px solid transparent',
-                  paddingBottom: '2px',
-                  textDecoration: 'none',
-                  transition: 'color 0.2s'
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const navStyle = {
+                fontFamily: 'Orbitron, sans-serif',
+                fontSize: '0.7rem',
+                fontWeight: 500,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                paddingBottom: '2px',
+                textDecoration: 'none',
+                transition: 'color 0.2s'
+              };
+              if (link.href) {
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      ...navStyle,
+                      color: 'rgba(255,255,255,0.58)',
+                      borderBottom: '2px solid transparent'
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                );
+              }
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  style={{
+                    ...navStyle,
+                    color: isActive(link.path) ? '#A855F7' : 'rgba(255,255,255,0.58)',
+                    borderBottom: isActive(link.path) ? '2px solid #A855F7' : '2px solid transparent'
+                  }}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* CTA — "Connect wallet" style pill */}
@@ -117,26 +141,46 @@ function Header() {
       {mobileMenuOpen && (
         <div style={{ background: '#060010', borderTop: '1px solid rgba(168,85,247,0.18)' }}>
           <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-3 px-4 rounded-lg mobile-touch-target flex items-center transition-colors duration-200"
-                style={{
-                  fontFamily: 'Orbitron, sans-serif',
-                  fontSize: '0.75rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: isActive(link.path) ? '#A855F7' : 'rgba(255,255,255,0.65)',
-                  background: isActive(link.path) ? 'rgba(168,85,247,0.08)' : 'transparent',
-                  textDecoration: 'none'
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const mobileStyle = {
+                fontFamily: 'Orbitron, sans-serif',
+                fontSize: '0.75rem',
+                fontWeight: 600,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                textDecoration: 'none'
+              };
+              if (link.href) {
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-3 px-4 rounded-lg mobile-touch-target flex items-center transition-colors duration-200"
+                    style={{ ...mobileStyle, color: 'rgba(255,255,255,0.65)', background: 'transparent' }}
+                  >
+                    {link.label}
+                  </a>
+                );
+              }
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="py-3 px-4 rounded-lg mobile-touch-target flex items-center transition-colors duration-200"
+                  style={{
+                    ...mobileStyle,
+                    color: isActive(link.path) ? '#A855F7' : 'rgba(255,255,255,0.65)',
+                    background: isActive(link.path) ? 'rgba(168,85,247,0.08)' : 'transparent'
+                  }}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <a
               href={whatsappUrl}
               target="_blank"
