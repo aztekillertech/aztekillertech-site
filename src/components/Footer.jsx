@@ -10,17 +10,14 @@ function Footer() {
   );
 
   return (
-    <footer className="bg-muted border-t border-border">
+    <footer style={{ background: 'linear-gradient(180deg, #0A0018 0%, #060010 100%)', borderTop: '1px solid rgba(168,85,247,0.18)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <img 
-                src="https://horizons-cdn.hostinger.com/8c03d443-41ba-495d-8928-50effd5c053a/6d203b324525c3b80ef5077a21caa9fe.png" 
-                alt="AztekillerTech logo" 
-                className="h-10 w-auto object-contain"
-                loading="lazy"
-              />
+              <span style={{ fontFamily: 'Orbitron, sans-serif', fontWeight: 900, fontSize: '1.2rem', letterSpacing: '0.04em', color: 'white' }}>
+                AZTEKILLER<span style={{ background: 'linear-gradient(90deg, #A855F7, #EC4899)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>TECH</span>
+              </span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Especialistas en ciberseguridad, protección de privacidad y soporte técnico profesional.
@@ -90,7 +87,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border/60 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4" style={{ borderTop: '1px solid rgba(168,85,247,0.12)' }}>
           <p className="text-sm text-muted-foreground">
             © 2026 AztekillerTech. Todos los derechos reservados.
           </p>

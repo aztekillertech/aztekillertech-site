@@ -187,7 +187,7 @@ function HomePage() {
         <meta name="description" content="Protegemos tu privacidad y recuperamos tu tranquilidad. Especialistas en ciberseguridad, protección de datos y soporte técnico." />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #000005 0%, #0A0018 12%, #160030 32%, #0E001E 55%, #080016 75%, #040010 100%)' }}>
         <Header />
         <FloatingWhatsAppButton />
 
@@ -502,7 +502,7 @@ function HomePage() {
         
         <ProductCardsSection />
 
-        <section className="py-20 bg-background border-y border-border">
+        <section className="py-20 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -553,7 +553,7 @@ function HomePage() {
 
         <SocialMediaSection />
 
-        <section id="contacto" className="py-20 bg-muted/30 border-t border-border">
+        <section id="contacto" className="py-20 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
