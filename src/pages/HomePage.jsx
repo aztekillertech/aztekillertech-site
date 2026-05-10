@@ -463,7 +463,14 @@ function HomePage() {
               </motion.div>
             </div>
 
-            {/* Guardian — mobile only, shown below content */}
+            {/* Bottom fade — elimina el corte entre hero y sección siguiente */}
+          <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{
+            height: '180px',
+            background: 'linear-gradient(to bottom, transparent 0%, rgba(10,0,22,0.85) 100%)',
+            zIndex: 20
+          }} />
+
+          {/* Guardian — mobile only, shown below content */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

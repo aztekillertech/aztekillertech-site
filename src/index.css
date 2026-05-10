@@ -29,7 +29,7 @@
     --muted-foreground: 0 0% 50%;
 
     /* Borders & Inputs */
-    --border: 272 55% 18%;       /* purple-tinted border */
+    --border: 272 70% 28%;       /* purple border */
     --input: 265 60% 8%;
     --ring: 272 85% 65%;
 
@@ -66,7 +66,7 @@ html {
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
   overflow-x: clip;
-  background: linear-gradient(160deg, #000005 0%, #080014 15%, #160030 35%, #1E0044 52%, #130028 68%, #070012 85%, #020008 100%);
+  background: radial-gradient(ellipse 95% 75% at 55% 42%, #1E0045 0%, #110026 38%, #07000F 68%, #020008 100%);
   background-attachment: fixed;
   color: hsl(var(--foreground));
   line-height: var(--mobile-line-height);
@@ -154,6 +154,31 @@ input, textarea, select {
 
 input::placeholder, textarea::placeholder {
   color: hsl(var(--muted-foreground));
+}
+
+/* ── Glassmorphism cards — estilo NeonMorphic con púrpura del guardian ── */
+.bg-card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-color: rgba(168, 85, 247, 0.35) !important;
+  box-shadow: inset 0 0 24px rgba(168, 85, 247, 0.05), 0 4px 32px rgba(0, 0, 0, 0.35) !important;
+}
+
+.bg-muted {
+  background: rgba(168, 85, 247, 0.06) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.bg-background {
+  background: rgba(10, 0, 20, 0.55) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.border-border {
+  border-color: rgba(168, 85, 247, 0.30) !important;
 }
 
 @layer utilities {
