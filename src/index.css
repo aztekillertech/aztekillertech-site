@@ -66,7 +66,7 @@ html {
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
   overflow-x: clip;
-  background: linear-gradient(160deg, #000005 0%, #0A0018 20%, #160030 45%, #0E001E 65%, #06000F 85%, #020008 100%);
+  background: linear-gradient(160deg, #000005 0%, #080014 15%, #160030 35%, #1E0044 52%, #130028 68%, #070012 85%, #020008 100%);
   background-attachment: fixed;
   color: hsl(var(--foreground));
   line-height: var(--mobile-line-height);

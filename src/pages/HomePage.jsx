@@ -194,10 +194,7 @@ function HomePage() {
         {/* ── HERO SECTION — NeonMorphic style ── */}
         <section
           className="relative flex items-center overflow-hidden"
-          style={{
-            minHeight: '100vh',
-            background: 'linear-gradient(115deg, #000005 0%, #0A0018 28%, #160030 52%, #200048 68%, #0E001E 84%, #040010 100%)'
-          }}
+          style={{ minHeight: '100vh' }}
         >
           {/* Atmospheric overlays */}
           <div className="absolute inset-0 pointer-events-none">

@@ -25,7 +25,7 @@ function Header() {
     <header
       className="sticky top-0 z-50 backdrop-blur-md"
       style={{
-        background: 'rgba(4,0,16,0.88)',
+        background: 'rgba(8,0,22,0.55)',
         borderBottom: '1px solid rgba(168,85,247,0.18)'
       }}
     >
