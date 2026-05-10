@@ -187,7 +187,7 @@ function HomePage() {
         <meta name="description" content="Protegemos tu privacidad y recuperamos tu tranquilidad. Especialistas en ciberseguridad, protección de datos y soporte técnico." />
       </Helmet>
 
-      <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #000005 0%, #0A0018 12%, #160030 32%, #0E001E 55%, #080016 75%, #040010 100%)' }}>
+      <div className="min-h-screen bg-transparent">
         <Header />
         <FloatingWhatsAppButton />
 

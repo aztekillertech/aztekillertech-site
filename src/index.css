@@ -6,12 +6,12 @@
 
 @layer base {
   :root {
-    /* Dark Theme - AztekillerTech NeonMorphic */
-    --background: 240 30% 4%;    /* #080A14 */
-    --foreground: 0 0% 95%;      /* #F2F2F2 */
-    --card: 240 25% 7%;          /* #0D0F1C */
+    /* Dark Theme - AztekillerTech NeonMorphic — todo en tono púrpura unificado */
+    --background: 264 100% 3%;   /* #040009 deep purple-black */
+    --foreground: 0 0% 95%;
+    --card: 265 80% 5%;          /* #07000D semi-transparent panel */
     --card-foreground: 0 0% 92%;
-    --popover: 240 25% 7%;
+    --popover: 265 80% 5%;
     --popover-foreground: 0 0% 92%;
 
     /* Primary Brand: Neon Purple */
@@ -23,14 +23,14 @@
     --accent-foreground: 0 0% 100%;
 
     /* Secondary/Muted */
-    --secondary: 240 20% 12%;    /* #141722 */
+    --secondary: 265 60% 8%;
     --secondary-foreground: 0 0% 80%;
-    --muted: 240 20% 10%;        /* #101318 */
+    --muted: 265 50% 6%;
     --muted-foreground: 0 0% 50%;
 
     /* Borders & Inputs */
-    --border: 240 18% 16%;       /* #1C1F2E */
-    --input: 240 20% 12%;
+    --border: 272 55% 18%;       /* purple-tinted border */
+    --input: 265 60% 8%;
     --ring: 272 85% 65%;
 
     /* Status */
@@ -66,7 +66,8 @@ html {
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
   overflow-x: clip;
-  background-color: hsl(var(--background));
+  background: linear-gradient(160deg, #000005 0%, #0A0018 20%, #160030 45%, #0E001E 65%, #06000F 85%, #020008 100%);
+  background-attachment: fixed;
   color: hsl(var(--foreground));
   line-height: var(--mobile-line-height);
   -webkit-font-smoothing: antialiased;
@@ -75,22 +76,6 @@ body {
   position: relative;
 }
 
-/* Global Watermark */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background-image: url('https://horizons-cdn.hostinger.com/8c03d443-41ba-495d-8928-50effd5c053a/6d203b324525c3b80ef5077a21caa9fe.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: clamp(300px, 50vw, 800px);
-  opacity: 0.05;
-  pointer-events: none;
-}
 
 @media (min-width: 640px) {
   body {
