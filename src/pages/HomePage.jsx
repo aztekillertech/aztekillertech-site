@@ -208,7 +208,7 @@ function HomePage() {
               width: '100%', height: '100%',
               objectFit: 'cover',
               objectPosition: 'center',
-              opacity: 0.28,
+              opacity: 0.33,
               zIndex: 0,
               pointerEvents: 'none',
             }}
