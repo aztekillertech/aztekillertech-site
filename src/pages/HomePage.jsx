@@ -196,6 +196,26 @@ function HomePage() {
           className="relative flex items-center"
           style={{ minHeight: '100vh' }}
         >
+          {/* Guardian background video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-hidden
+            style={{
+              position: 'absolute', inset: 0,
+              width: '100%', height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center',
+              opacity: 0.28,
+              zIndex: 0,
+              pointerEvents: 'none',
+            }}
+          >
+            <source src="/videos/guardian.mp4" type="video/mp4" />
+          </video>
+
           {/* Atmospheric overlays */}
           <div className="absolute inset-0 pointer-events-none">
             {/* Main purple glow — behind guardian */}
