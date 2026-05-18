@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aztekiller Recovery Suite</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      #pw-gate {
+        position: fixed; inset: 0; background: #07070b;
+        display: flex; align-items: center; justify-content: center;
+        z-index: 99999; flex-direction: column; gap: 20px;
+      }
+      #pw-gate img { width: 72px; border-radius: 16px; }
+      #pw-gate h2 { color: #fff; margin: 0; font-size: 1.3rem; letter-spacing: .04em; }
+      #pw-gate p  { color: #888; margin: 0; font-size: .85rem; }
+      #pw-gate input {
+        background: #13111a; border: 1px solid #2e2640; color: #fff;
+        padding: 12px 18px; border-radius: 10px; font-size: 1rem;
+        width: 260px; outline: none;
+      }
+      #pw-gate input:focus { border-color: #7c3aed; }
+      #pw-gate button {
+        background: #7c3aed; color: #fff; border: none;
+        padding: 12px 36px; border-radius: 10px; font-size: 1rem;
+        cursor: pointer; font-weight: 600; width: 260px;
+      }
+      #pw-gate button:hover { background: #6d28d9; }
+      #pw-error { color: #ff4d6d; font-size: .85rem; display: none; }
+    </style>
+  </head>
+  <body>
+
+    <!-- PANTALLA DE ACCESO -->
+    <div id="pw-gate">
+      <img src="assets/aztekiller-logo.png" alt="Aztekiller">
+      <h2>Recovery Suite</h2>
+      <p>Acceso exclusivo — AztekillerTech</p>
+      <input type="password" id="pw-input" placeholder="Contraseña" autocomplete="current-password">
+      <span id="pw-error">Contraseña incorrecta</span>
+      <button onclick="checkPw()">Entrar</button>
+    </div>
+
+    <script>
+      (function() {
+        if (localStorage.getItem('rs-auth') === 'aztk26') {
+          document.getElementById('pw-gate').style.display = 'none';
+        }
+        document.getElementById('pw-input').addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') checkPw();
+        });
+      })();
+      function checkPw() {
+        const val = document.getElementById('pw-input').value;
+        if (val === 'aztekiller2026') {
+          localStorage.setItem('rs-auth', 'aztk26');
+          document.getElementById('pw-gate').style.display = 'none';
+        } else {
+          document.getElementById('pw-error').style.display = 'block';
+          document.getElementById('pw-input').value = '';
+          document.getElementById('pw-input').focus();
+        }
+      }
+    </script>
+
+    <div class="shell">
+      <aside class="sidebar" aria-label="Navegacion principal">
+        <div class="brand">
+          <img src="assets/aztekiller-logo.png" alt="Aztekiller Recovery Suite">
+          <div class="brand-text">
+            <strong>Aztekiller</strong>
+            <span>Recovery Suite</span>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-btn active" data-view="dashboard">
+            <span class="nav-icon">⌂</span>
+            <span class="nav-label">Inicio</span>
+          </button>
+          <button class="nav-btn" data-view="social">
+            <span class="nav-icon">◎</span>
+            <span class="nav-label">Redes sociales</span>
+          </button>
+          <button class="nav-btn" data-view="email">
+            <span class="nav-icon">✉</span>
+            <span class="nav-label">Correos</span>
+          </button>
+          <button class="nav-btn" data-view="web">
+            <span class="nav-icon">⬡</span>
+            <span class="nav-label">Páginas y dominios</span>
+          </button>
+          <button class="nav-btn" data-view="content">
+            <span class="nav-icon">⚑</span>
+            <span class="nav-label">Filtraciones</span>
+          </button>
+          <button class="nav-btn" data-view="identity">
+            <span class="nav-icon">◈</span>
+            <span class="nav-label">Identidad</span>
+          </button>
+          <button class="nav-btn" data-view="case">
+            <span class="nav-icon">▤</span>
+            <span class="nav-label">Expedientes</span>
+          </button>
+        </nav>
+
+        <div class="signal">
+          <span id="clock">--:--</span>
+          <small>Modo: recuperación defensiva</small>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div class="topbar-title">
+            <p class="eyebrow">Aztekiller Recovery Suite</p>
+            <h1 id="view-title">Inicio</h1>
+          </div>
+          <div class="quick-actions">
+            <button id="panicBtn" class="danger">⚡ Acción rápida</button>
+            <button id="importBtn">↑ Importar</button>
+            <button id="exportBtn">↓ Exportar</button>
+            <button id="printBtn">⎙ Imprimir</button>
+          </div>
+        </header>
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="view active">
+          <div class="hero-panel">
+            <div class="hero-copy">
+              <p class="eyebrow">Modo recovery activado</p>
+              <div class="hero-title">
+                <img src="assets/aztekiller-logo.png" alt="Guardian Aztekiller">
+                <h2>Aztekiller<br>Recovery Suite</h2>
+              </div>
+              <p class="muted">Flujos guiados para recuperar cuentas, cortar accesos del atacante y retirar contenido filtrado sin saltarse pasos críticos.</p>
+            </div>
+            <div class="hero-stats" id="heroStats"></div>
+          </div>
+
+          <div class="command-strip">
+            <button data-open-view="social">◎ Redes sociales</button>
+            <button data-open-view="email">✉ Correos</button>
+            <button data-open-view="web">⬡ Páginas</button>
+            <button data-open-view="content">⚑ Filtraciones</button>
+            <button data-open-view="identity">◈ Identidad</button>
+          </div>
+
+          <div class="stats-bar" id="caseStatsBar"></div>
+
+          <section class="recovery-table">
+            <div class="table-head">
+              <div>
+                <p class="eyebrow">Tabla de recuperación</p>
+                <h2>Redes sociales y correos</h2>
+              </div>
+              <span class="version-badge">V 1.1</span>
+            </div>
+            <div class="legend">
+              <span><i class="dot social-dot"></i>Red social</span>
+              <span><i class="dot email-dot"></i>Correo electrónico</span>
+              <span><i class="dot web-dot"></i>Web / Dominio</span>
+              <span><i class="dot content-dot"></i>Filtración</span>
+              <span><i class="dot identity-dot"></i>Identidad</span>
+            </div>
+            <div id="recoveryTable" class="app-table"></div>
+          </section>
+
+          <div class="dashboard-bottom">
+            <section class="case-card">
+              <h2>Nuevo caso rápido</h2>
+              <label>Cliente o cuenta afectada
+                <input id="caseName" placeholder="Ej. Instagram de Javi / correo Gmail">
+              </label>
+              <label>Prioridad
+                <select id="casePriority">
+                  <option>Critica</option>
+                  <option>Alta</option>
+                  <option>Media</option>
+                </select>
+              </label>
+              <label>Resumen rápido
+                <textarea id="caseSummary" placeholder="Qué pasó, desde cuándo, último acceso..."></textarea>
+              </label>
+            </section>
+          </div>
+        </section>
+
+        <!-- REDES SOCIALES -->
+        <section id="social" class="view">
+          <div class="view-tools">
+            <input id="socialSearch" class="search" placeholder="Buscar red social...">
+            <button data-custom="social">+ Agregar otro</button>
+          </div>
+          <div id="socialGrid" class="service-grid"></div>
+        </section>
+
+        <!-- CORREOS -->
+        <section id="email" class="view">
+          <div class="view-tools">
+            <input id="emailSearch" class="search" placeholder="Buscar correo...">
+            <button data-custom="email">+ Agregar otro</button>
+          </div>
+          <div id="emailGrid" class="service-grid"></div>
+        </section>
+
+        <!-- WEB -->
+        <section id="web" class="view">
+          <div class="view-tools">
+            <input id="webSearch" class="search" placeholder="Buscar plataforma web, hosting o dominio...">
+            <button data-custom="web">+ Agregar otro</button>
+          </div>
+          <div id="webGrid" class="service-grid"></div>
+        </section>
+
+        <!-- CONTENIDO -->
+        <section id="content" class="view">
+          <div class="view-tools">
+            <input id="contentSearch" class="search" placeholder="Buscar tipo de filtración o remoción...">
+            <button data-custom="content">+ Agregar otro</button>
+          </div>
+          <div id="contentGrid" class="service-grid"></div>
+        </section>
+
+        <!-- IDENTIDAD -->
+        <section id="identity" class="view">
+          <div class="view-tools">
+            <input id="identitySearch" class="search" placeholder="Buscar identidad, banco, dispositivo...">
+            <button data-custom="identity">+ Agregar otro</button>
+          </div>
+          <div id="identityGrid" class="service-grid"></div>
+        </section>
+
+        <!-- EXPEDIENTES -->
+        <section id="case" class="view">
+          <div class="case-topbar">
+            <div class="case-mode-tabs">
+              <button id="btnEnAtencion" class="case-mode-btn active" data-mode="active">En atención</button>
+              <button id="btnHistorial"  class="case-mode-btn"        data-mode="history">Historial</button>
+            </div>
+            <div class="case-topbar-actions">
+              <button id="newFileBtn" class="btn-nuevo-cliente">+ Nuevo cliente</button>
+              <button id="saveFileBtn">✓ Guardar</button>
+              <button id="deleteFileBtn" class="danger subtle">✕</button>
+            </div>
+          </div>
+
+          <div class="case-layout case-layout-wide">
+            <section class="file-form">
+              <h2 id="activeFileTitle">Nuevo cliente</h2>
+
+              <div class="form-grid">
+                <label>Número de expediente
+                  <input id="fileNumber" placeholder="AZK-2026-0001" readonly style="opacity:.7;cursor:default">
+                </label>
+                <label>Nombre del cliente
+                  <input id="caseName2" placeholder="Nombre completo o alias">
+                </label>
+                <label>Correo afectado
+                  <input id="fileEmail" placeholder="correo@dominio.com">
+                </label>
+                <label>Teléfono
+                  <input id="filePhone" placeholder="+52...">
+                </label>
+                <label>Correo para notificaciones
+                  <input id="notifyEmail" type="email" placeholder="donde le llegan los avisos">
+                </label>
+                <label>Usuario / red afectada
+                  <input id="fileUsername" placeholder="@usuario / Gmail / Facebook">
+                </label>
+                <label>Prioridad
+                  <select id="casePriority2">
+                    <option>Critica</option>
+                    <option>Alta</option>
+                    <option>Media</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>Estado del caso
+                <select id="caseStatus">
+                  <option value="abierto">🔴 Abierto</option>
+                  <option value="en_progreso">🟡 En progreso</option>
+                  <option value="resuelto">🟢 Resuelto</option>
+                  <option value="cerrado">⚫ Cerrado</option>
+                </select>
+              </label>
+
+              <label>Contactos relacionados
+                <textarea id="fileContacts" placeholder="Familiares, socios, correos alternos, administradores..."></textarea>
+              </label>
+              <label>Datos importantes
+                <textarea id="fileData" placeholder="Documentos, cuentas vinculadas, URLs, folios, IDs..."></textarea>
+              </label>
+              <label>Resumen rápido
+                <textarea id="caseSummary2" placeholder="Qué pasó, desde cuándo, último acceso..."></textarea>
+              </label>
+              <label>Bitácora del expediente
+                <textarea id="caseNotes" class="notes" placeholder="Pega evidencias, fechas, URLs, folios, respuestas de soporte y siguientes pasos."></textarea>
+              </label>
+
+              <div class="button-row">
+                <button id="notifyBtn">✉ Notificar cliente</button>
+                <button id="copyBriefBtn">⎘ Copiar expediente</button>
+                <button id="clearCaseBtn" class="danger subtle">✕ Limpiar formulario</button>
+              </div>
+            </section>
+
+            <section class="file-search-panel">
+              <input id="fileSearch" class="search" placeholder="Buscar por nombre, número, correo...">
+              <div id="fileResults" class="file-results"></div>
+
+              <h2>Checklist universal</h2>
+              <div id="universalChecklist" class="checklist"></div>
+            </section>
+          </div>
+        </section>
+
+        <!-- MODAL DE FLUJO -->
+        <dialog id="workflowModal">
+          <div class="modal-head">
+            <div>
+              <p id="modalCategory" class="eyebrow">Servicio</p>
+              <h2 id="modalTitle">Flujo</h2>
+            </div>
+            <button id="closeModal" aria-label="Cerrar" class="close-btn">✕</button>
+          </div>
+          <div class="modal-body">
+            <section class="rescue-panel">
+              <div class="meter">
+                <span id="progressText">0%</span>
+                <div class="meter-bar"><i id="progressBar"></i></div>
+              </div>
+              <div id="workflowLinks" class="link-list"></div>
+              <div class="button-row" style="margin-top:12px">
+                <button id="copyStepsBtn">⎘ Copiar pasos</button>
+                <button id="markCriticalBtn" class="danger subtle">⚑ Marcar crítico</button>
+              </div>
+            </section>
+            <section>
+              <h3>Checklist de recuperación</h3>
+              <div id="workflowSteps" class="checklist"></div>
+              <h3>Si no funciona</h3>
+              <div id="fallbackSteps" class="fallbacks"></div>
+            </section>
+          </div>
+        </dialog>
+
+        <!-- MODAL NOTIFICAR CLIENTE -->
+        <dialog id="notifyModal">
+          <div class="modal-head">
+            <div>
+              <p class="eyebrow">Aztekiller Recovery</p>
+              <h2>Notificar al cliente</h2>
+            </div>
+            <button id="closeNotifyModal" class="close-btn">✕</button>
+          </div>
+          <div style="padding:24px;display:grid;gap:16px">
+            <div class="notify-meta">
+              <span>Expediente: <strong id="notifyCase">—</strong></span>
+              <span>Destinatario: <strong id="notifyEmailDisplay">—</strong></span>
+            </div>
+            <label>Mensaje de actualización al cliente
+              <textarea id="notifyMessage" placeholder="Ej: Hemos recuperado el acceso a tu cuenta. El siguiente paso es activar la verificación en dos pasos..."></textarea>
+            </label>
+            <div class="button-row">
+              <button id="sendNotifyBtn">✉ Enviar email</button>
+              <button id="cancelNotifyBtn" class="danger subtle">Cancelar</button>
+            </div>
+            <p class="muted" style="font-size:12px">El mensaje queda registrado automáticamente en la bitácora del expediente.</p>
+          </div>
+        </dialog>
+
+        <!-- MODAL IMPORTAR -->
+        <dialog id="importModal">
+          <div class="modal-head">
+            <div>
+              <p class="eyebrow">Aztekiller Recovery</p>
+              <h2>Importar expedientes</h2>
+            </div>
+            <button id="closeImportModal" class="close-btn">✕</button>
+          </div>
+          <div style="padding:24px;display:grid;gap:16px">
+            <p class="muted">Selecciona un archivo JSON exportado previamente desde esta app.</p>
+            <input type="file" id="importFileInput" accept=".json">
+            <div id="importPreview" class="import-preview"></div>
+            <div class="button-row">
+              <button id="confirmImportBtn" class="hidden">✓ Importar expedientes</button>
+            </div>
+          </div>
+        </dialog>
+      </main>
+    </div>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -9,6 +9,7 @@ const navLinks = [
   { path: '/servicios', label: 'Servicios' },
   { href: 'https://ugcguardian.pro', label: 'UGC Guardian' },
   { href: 'https://secufy.pro', label: 'Secufy' },
+  { path: '/obsidian-tools', label: 'Obsidian Tools' },
   { path: '/apps', label: 'Apps' },
   { path: '/tools', label: 'Tools' },
   { path: '/centro', label: 'Centro' },
@@ -100,31 +101,6 @@ function Header() {
             })}
           </nav>
 
-          {/* CTA — "Connect wallet" style pill */}
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-105 active:scale-95"
-            style={{
-              fontFamily: 'Orbitron, sans-serif',
-              fontSize: '0.7rem',
-              fontWeight: 700,
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              color: 'white',
-              padding: '0.6rem 1.4rem',
-              borderRadius: '999px',
-              border: '1.5px solid #A855F7',
-              background: 'rgba(168,85,247,0.08)',
-              textDecoration: 'none',
-              boxShadow: '0 0 16px rgba(168,85,247,0.22)',
-              whiteSpace: 'nowrap'
-            }}
-          >
-            Contáctanos
-          </a>
-
           {/* Hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -181,26 +157,6 @@ function Header() {
                 </Link>
               );
             })}
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="mt-4 flex items-center justify-center py-3 rounded-full transition-all duration-200"
-              style={{
-                fontFamily: 'Orbitron, sans-serif',
-                fontSize: '0.7rem',
-                fontWeight: 700,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: 'white',
-                border: '1.5px solid #A855F7',
-                background: 'rgba(168,85,247,0.10)',
-                textDecoration: 'none'
-              }}
-            >
-              Contáctanos
-            </a>
           </nav>
         </div>
       )}

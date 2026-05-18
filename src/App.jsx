@@ -11,6 +11,7 @@ import SeguridadPage from './pages/SeguridadPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import ProcessPage from './pages/ProcessPage.jsx';
 import UGCGuardianPage from '@/pages/UGCGuardianPage.jsx';
+import ObsidianToolsPage from './pages/ObsidianToolsPage.jsx';
 import AppsPage from './pages/AppsPage.jsx';
 import ToolsPage from './pages/ToolsPage.jsx';
 import CentroPage from './pages/CentroPage.jsx';
@@ -25,6 +26,7 @@ function App() {
         <Route path="/servicio/:serviceId" element={<HomePage />} />
         <Route path="/servicios" element={<ServicesPage />} />
         <Route path="/ugc-guardian" element={<UGCGuardianPage />} />
+        <Route path="/obsidian-tools" element={<ObsidianToolsPage />} />
         <Route path="/reparacion" element={<RepairPage />} />
         <Route path="/ciberseguridad" element={<CybersecurityPage />} />
         <Route path="/software" element={<SoftwarePage />} />
