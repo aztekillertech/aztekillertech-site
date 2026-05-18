@@ -10,6 +10,7 @@ const navLinks = [
   { href: 'https://ugcguardian.pro', label: 'UGC Guardian' },
   { href: 'https://secufy.pro', label: 'Secufy' },
   { path: '/obsidian-tools', label: 'Obsidian Tools' },
+  { path: '/registro-telefonico', label: 'Registro Tlf' },
   { path: '/apps', label: 'Apps' },
   { path: '/tools', label: 'Tools' },
   { path: '/centro', label: 'Centro' },
