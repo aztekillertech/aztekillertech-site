@@ -41,7 +41,7 @@ export default function ObsidianToolsPage() {
   }, []);
 
   const handleDownload = (type) => {
-    const base = 'https://aztekillertech.net/downloads/';
+    const base = 'https://github.com/aztekillertech/aztekillertech-site/releases/download/v0.4.0/';
     window.open(
       type === 'setup'
         ? `${base}Aztekiller-Obsidian-Core-Suite-Setup-0.4.0.exe`
