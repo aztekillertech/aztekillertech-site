@@ -16,6 +16,7 @@ import RegistroTelefonicoPage from './pages/RegistroTelefonicoPage.jsx';
 import AppsPage from './pages/AppsPage.jsx';
 import ToolsPage from './pages/ToolsPage.jsx';
 import CentroPage from './pages/CentroPage.jsx';
+import MictlanPage from './pages/MictlanPage.jsx';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/apps" element={<AppsPage />} />
         <Route path="/tools" element={<ToolsPage />} />
         <Route path="/centro" element={<CentroPage />} />
+        <Route path="/mictlan" element={<MictlanPage />} />
         <Route path="/contacto" element={<ContactPage />} />
         <Route path="/proceso" element={<ProcessPage />} />
         <Route path="*" element={
